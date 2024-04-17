@@ -19,13 +19,13 @@ namespace AhabTools
         void OnGUI()
         {
             GUILayout.Label("Step 1. Save textures' paths.", EditorStyles.boldLabel);
-            EditorGUILayout.HelpBox("Registers and stores all the currently associated textures and their paths for any material selected in the Project tab. This information is stored in a JSON file created at the same location as the selected material.", MessageType.Info);
+            EditorGUILayout.HelpBox("Registers and stores all the currently associated textures and their paths for any material selected in the Project tab. This information is stored in a JSON file created at the same location as the selected materials.", MessageType.Info);
             if (GUILayout.Button("Store paths into JSON"))
             {
                 SaveTexturesVariablesAndNamesToJson();
             }
             GUILayout.Label("Step 2. Refill textures.", EditorStyles.boldLabel);
-            EditorGUILayout.HelpBox("If one or more materials are selected and there are JSON files as described above, the tool will read their content and reassign the texture files to the materials according to the annotations in the JSON files.", MessageType.Info);
+            EditorGUILayout.HelpBox("If one or more materials are selected in the Project Tab and there are JSON files as described above in the same path, the tool will read their content and reassign the texture files to the materials according to the annotations in the JSON files.", MessageType.Info);
             if (GUILayout.Button("Refill Materials"))
             {
                 RefillMaterialsFromJson();
