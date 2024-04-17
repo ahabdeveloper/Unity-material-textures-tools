@@ -8,8 +8,8 @@ namespace AhabTools
     public class QuickCharacterMaterialSetter : EditorWindow
     {
         #region Variables
-        private string newTexturesContainer = "Assets/AhabDev_Characters/Female_N3/Textures";
-        private string newTexturesContainerAlt = "Assets/AhabDev_Characters/_Common_Textures (Dont delete)";
+        private string newTexturesContainer = "Assets";
+        private string newTexturesContainerAlt = "Assets";
         private bool auxVariablesFoldout = true;
         private bool useSecondPath = true;
         private string originalKeyword = "NX"; 
