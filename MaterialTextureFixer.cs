@@ -13,11 +13,26 @@ namespace AhabTools
         [MenuItem("Tools/Ahab Tools/Material Texture Fixer")]
         public static void ShowWindow()
         {
-            EditorWindow.GetWindow(typeof(MaterialTextureFixer), false, "Material Texture Fixer");
+            EditorWindow.GetWindow(typeof(MaterialTextureFixer), false, "Material Texture Fixer v1.0.0.");
         }
 
         void OnGUI()
         {
+            // Styling for the hyperlink
+            GUIStyle hyperlinkStyle = new GUIStyle();
+            hyperlinkStyle.normal.textColor = Color.gray;
+            hyperlinkStyle.fontStyle = FontStyle.Italic;
+
+
+            // Displaying the hyperlink just below the HelpBox
+            Rect linkRect = EditorGUILayout.GetControlRect();
+            if (GUI.Button(linkRect, "Click here to visit the GitHub repository of this tool to check the latest version.", hyperlinkStyle))
+            {
+                Application.OpenURL("https://github.com/ahabdeveloper/Unity-material-textures-tools");
+            }
+
+            GUILayout.Space(5);
+
             GUILayout.Label("Step 1. Save textures' paths.", EditorStyles.boldLabel);
             EditorGUILayout.HelpBox("Registers and stores all the currently associated textures and their paths for any material selected in the Project tab. This information is stored in a JSON file created at the same location as the selected materials.", MessageType.Info);
             if (GUILayout.Button("Store paths into JSON"))
