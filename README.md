@@ -2,19 +2,49 @@
 
 _A repository of different tools to use in Unity 3D to deal with materials and textures in multiple ways. Subject to updates in the future._
 
-I created these tools to assist users in correcting potential issues with missing textures when importing Unity packages containing files for different Render Pipelines or preparing the Packges themselves for later distribution.
+_I created these tools to assist users in correcting potential issues with missing textures when importing Unity packages containing files for different Render Pipelines or preparing the Packges themselves for later distribution._
 
-Nevertheless, this tool could have other potential uses, such as:
+_Nevertheless, this tool could have other potential uses, such as:_
 
-1. Serving as the foundation for an efficient tool to convert materials between different Render Pipelines.
-2. Transforming materials in Unity projects that contain shaders and materials originally converted from Unreal projects. Often, vendors do not update to the most efficient shaders and instead use default ones for these conversions.
+* _Serving as the foundation for an efficient tool to convert materials between different Render Pipelines._
+
+* _Transforming materials in Unity projects that contain shaders and materials originally converted from Unreal projects. Often, vendors do not update to the most efficient shaders and instead use default ones for these conversions._
 
 ## **Material Texture Fixer (v1.0.0.):**
 
-A simple tool with two main functions:
+<details1>
+  <summary>Click to expand!</summary>
+  
+This Unity editor script, is crafted to simplify the process of managing and restoring material textures in Unity projects. Accessible through "Tools/Ahab Tools/Material Texture Fixer" in the Unity Editor, this script provides a structured approach to saving and refilling textures for materials. 
 
-1. Registers and stores all the currently associated textures and their paths for any material selected in the Project tab. This information is stored in a JSON file created at the same location as the selected material.
-2. If one or more materials are selected in the Project Tab and there are JSON files as described above in the same path, the tool will read their content and reassign the texture files to the materials according to the annotations in the JSON files.
+### **Features and Workflow**
+
+**Custom Editor Window:**
+
+* A user-friendly interface is presented within a custom editor window. This interface includes buttons, labels, and information boxes that guide you through the texture management process.
+
+**Saving Textures' Paths:**
+
+* You can save the paths of all textures associated with selected materials into a JSON file. This file is stored in the same location as the materials, making it easy to track and manage texture information.
+
+**Refilling Textures from JSON:**
+
+* If materials are selected and a corresponding JSON file is available in the same directory, the script can read this file to reassign the appropriate textures to the materials based on the saved data. This functionality ensures consistency and simplifies the process of texture management across different sessions or projects.
+
+### **How to Use**
+
+1\. Open the Editor Window:
+
+* Navigate to "Tools/Ahab Tools/Material Texture Fixer" in Unity’s top menu to open the editor window.
+
+2\. Step 1: Save Textures' Paths:
+
+* Click the "Store paths into JSON" button after selecting the materials in the Project tab. This action will register and store the paths of all textures related to the selected materials in a JSON file.
+
+3\. Step 2: Refill Textures:
+
+* With materials selected and the JSON file in place, press the "Refill Materials" button. The script will automatically assign the textures according to the data in the JSON file, effectively restoring the original texture settings of the materials.
+</details1>
 
 ## **Quick Character Material Setter (v1.0.0.):**
 
