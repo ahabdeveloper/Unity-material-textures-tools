@@ -15,10 +15,12 @@ _Nevertheless, this tool could have other potential uses, such as:_
 <details>
   <summary>Click to expand!</summary>
 
-
 This Unity editor script, is crafted to simplify the process of managing and restoring material textures in Unity projects. Accessible through "Tools/Ahab Tools/Material Texture Fixer" in the Unity Editor, this script provides a structured approach to saving and refilling textures for materials. 
 
 ### **Features and Workflow**
+
+<details>
+  <summary>Click to expand!</summary>
 
 **Custom Editor Window:**
 
@@ -31,6 +33,7 @@ This Unity editor script, is crafted to simplify the process of managing and res
 **Refilling Textures from JSON:**
 
 * If materials are selected and a corresponding JSON file is available in the same directory, the script can read this file to reassign the appropriate textures to the materials based on the saved data. This functionality ensures consistency and simplifies the process of texture management across different sessions or projects.
+</details>
 
 ### **How to Use**
 
@@ -49,9 +52,16 @@ This Unity editor script, is crafted to simplify the process of managing and res
 
 ## **Quick Character Material Setter (v1.0.0.):**
 
+<details>
+  <summary>Click to expand!</summary>
+
+
 This Unity editor script,  is designed to streamline the process of updating materials with new textures within Unity. It provides functionality through a custom editor window, which you can access under "Tools/Ahab Tools/Quick Character Material Setter" in the Unity Editor menu. 
 
 ### **Features and Workflow**
+
+<details>
+  <summary>Click to expand!</summary>
 
 **Custom Editor Window:**
 
@@ -72,6 +82,7 @@ This Unity editor script,  is designed to streamline the process of updating mat
 **Material Update:**
 
 * Once paths and renaming rules are set, you can apply these to selected materials. The script searches through the specified directories, finds matching textures, and assigns them to the appropriate texture properties of the selected materials.
+</details>
 
 ### **How to Use**
 
@@ -92,6 +103,7 @@ This Unity editor script,  is designed to streamline the process of updating mat
 4\. Execute Updates:
 
 * Click the "Refill selected materials" button to start the process. The script will update the materials with the new textures based on the configured settings.
+</details>
 
 
 
