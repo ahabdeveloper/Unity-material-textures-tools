@@ -9,8 +9,8 @@ I created this tool to assist users in correcting potential issues with missing 
 
 Nevertheless, this tool could have other potential uses, such as:
 
-Serving as the foundation for an efficient tool to convert materials between different Render Pipelines.
-Transforming materials in Unity projects that contain shaders and materials originally converted from Unreal projects. Often, vendors do not update to the most efficient shaders and instead use default ones for these conversions.
+1. Serving as the foundation for an efficient tool to convert materials between different Render Pipelines.
+2. Transforming materials in Unity projects that contain shaders and materials originally converted from Unreal projects. Often, vendors do not update to the most efficient shaders and instead use default ones for these conversions.
 
 
 
