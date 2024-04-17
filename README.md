@@ -12,9 +12,10 @@ _Nevertheless, this tool could have other potential uses, such as:_
 
 ## **Material Texture Fixer (v1.0.0.):**
 
-<details1>
+<details>
   <summary>Click to expand!</summary>
-  
+
+
 This Unity editor script, is crafted to simplify the process of managing and restoring material textures in Unity projects. Accessible through "Tools/Ahab Tools/Material Texture Fixer" in the Unity Editor, this script provides a structured approach to saving and refilling textures for materials. 
 
 ### **Features and Workflow**
@@ -44,7 +45,7 @@ This Unity editor script, is crafted to simplify the process of managing and res
 3\. Step 2: Refill Textures:
 
 * With materials selected and the JSON file in place, press the "Refill Materials" button. The script will automatically assign the textures according to the data in the JSON file, effectively restoring the original texture settings of the materials.
-</details1>
+</details>
 
 ## **Quick Character Material Setter (v1.0.0.):**
 
