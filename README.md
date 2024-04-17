@@ -1,3 +1,5 @@
+### **Material Texture Fixer:**
+
 A simple tool with two main functions:
 
 1. Registers and stores all the currently associated textures and their paths for any material selected in the Project tab. This information is stored in a JSON file created at the same location as the selected material.
