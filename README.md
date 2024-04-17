@@ -4,7 +4,7 @@ _A repository of different tools to use in Unity 3D to deal with materials and t
 
 _I created these tools to assist users in correcting potential issues with missing textures when importing Unity packages containing files for different Render Pipelines or preparing the Packges themselves for later distribution._
 
-_Nevertheless, this tool could have other potential uses, such as:_
+_Nevertheless, these tools could have other potential uses, such as:_
 
 * _Serving as the foundation for an efficient tool to convert materials between different Render Pipelines._
 
