@@ -1,4 +1,6 @@
-A repository of different tools to use in Unity 3D to deal with materials and textures in multiple ways. Subject to updates in the future.
+# Unity Material Texture Tools
+
+_A repository of different tools to use in Unity 3D to deal with materials and textures in multiple ways. Subject to updates in the future._
 
 ### **Material Texture Fixer:**
 
