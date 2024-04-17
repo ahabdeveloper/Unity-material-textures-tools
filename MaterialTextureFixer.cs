@@ -18,19 +18,17 @@ namespace AhabTools
 
         void OnGUI()
         {
-            // Styling for the hyperlink
+            #region Hyperlink
             GUIStyle hyperlinkStyle = new GUIStyle();
             hyperlinkStyle.normal.textColor = Color.gray;
             hyperlinkStyle.fontStyle = FontStyle.Italic;
-
-
-            // Displaying the hyperlink just below the HelpBox
             Rect linkRect = EditorGUILayout.GetControlRect();
             if (GUI.Button(linkRect, "Click here to visit the GitHub repository of this tool to check the latest version.", hyperlinkStyle))
             {
                 Application.OpenURL("https://github.com/ahabdeveloper/Unity-material-textures-tools");
             }
-
+            #endregion
+            
             GUILayout.Space(5);
 
             GUILayout.Label("Step 1. Save textures' paths.", EditorStyles.boldLabel);
