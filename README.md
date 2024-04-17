@@ -14,6 +14,7 @@ _Nevertheless, this tool could have other potential uses, such as:_
 
 <details>
   <summary>Click to expand!</summary>
+![Material Texture Fixer UI](images/QuickCharacterMaterialSetter.png "Screenshot of Material Texture Fixer UI")
 
 This Unity editor script, is crafted to simplify the process of managing and restoring material textures in Unity projects. Accessible through "Tools/Ahab Tools/Material Texture Fixer" in the Unity Editor, this script provides a structured approach to saving and refilling textures for materials. 
 
