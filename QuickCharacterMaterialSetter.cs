@@ -12,8 +12,8 @@ namespace AhabTools
         private string newTexturesContainerAlt = "Assets";
         private bool auxVariablesFoldout = true;
         private bool useSecondPath = true;
-        private string originalKeyword = "NX"; 
-        private string newKeyword = "N1"; 
+        private string originalKeyword = "NX";
+        private string newKeyword = "N1";
         private Vector2 scrollPosition;
         private bool renameTextures = true;
         private GUIStyle foldoutHeaderStyle;
@@ -59,14 +59,18 @@ namespace AhabTools
                 "\n" +
                 "4. If necessary activate a Secondary Path to lookf for textures.\n" +
                 "\n" +
-                "5. Execute the method by clicking the button!", MessageType.None);
+                "5. Execute the method by clicking the button!.\n" +
+                "\n" +
+                "-------------------\n" +
+                "\n" +
+                "Refill materials ALT will empty the current variables with associated textures that couldn't be refilled in the new path.", MessageType.None);
             #endregion
 
             GUILayout.Space(5);
             GUILayout.Label("New Textures' Path Main Parent:");
             GUILayout.BeginHorizontal();
             newTexturesContainer = GUILayout.TextField(newTexturesContainer);
-            GUIContent buttonContent = new GUIContent("R", "Register automatically the current selected folder in the Project Tab");  
+            GUIContent buttonContent = new GUIContent("R", "Register automatically the current selected folder in the Project Tab");
             if (GUILayout.Button(buttonContent, GUILayout.Width(20), GUILayout.Height(20)))
             {
                 SetNewTexturesContainerPathToSelectedFolder();
@@ -80,6 +84,14 @@ namespace AhabTools
             {
                 RefillAllMaterials();
             }
+            GUI.color = Color.red;
+
+            GUIContent buttonContent4 = new GUIContent("Refill selected materials ALT", "Only use if you know all the correct textures will be setted and you want to erase those that for any reason you wish just to empty!");
+            if (GUILayout.Button(buttonContent4, GUILayout.Height(40)))
+            {
+                RefillAllMaterialsAlt();
+            }
+            GUI.color = Color.white;
 
             GUILayout.Space(15);
             #region Foldout Styles
@@ -175,7 +187,65 @@ namespace AhabTools
         }
 
         #region Auxiliar Methods
-        private void RefillAllMaterials()
+        private void RefillAllMaterialsAlt()
+        {
+            string[] extensions = new string[] { ".png", ".jpg", ".jpeg", ".tga", ".bmp", ".gif", ".psd", ".tif", ".tiff" }; // Supported texture formats
+
+            foreach (Object obj in Selection.objects)
+            {
+                if (obj is Material)
+                {
+                    Material material = obj as Material;
+                    Shader shader = material.shader;
+                    Debug.Log($"Refilling textures for material: {material.name}");
+
+                    int propertyCount = ShaderUtil.GetPropertyCount(shader);
+                    for (int i = 0; i < propertyCount; i++)
+                    {
+                        if (ShaderUtil.GetPropertyType(shader, i) == ShaderUtil.ShaderPropertyType.TexEnv)
+                        {
+                            string propertyName = ShaderUtil.GetPropertyName(shader, i);
+                            Texture texture = material.GetTexture(propertyName);
+                            if (texture != null)
+                            {
+                                string textureName = texture.name;
+                                string path = AssetDatabase.GetAssetPath(texture);
+                                string extension = Path.GetExtension(path);
+
+                                if (renameTextures && textureName.Contains(originalKeyword))
+                                {
+                                    string oldTextureName = textureName;
+                                    textureName = textureName.Replace(originalKeyword, newKeyword);
+                                    Debug.Log($"Renaming texture from {oldTextureName} to {textureName + extension}.");
+                                }
+
+                                string[] pathsToSearch = { newTexturesContainer };
+                                if (useSecondPath)
+                                {
+                                    pathsToSearch = new string[] { newTexturesContainer, newTexturesContainerAlt };
+                                }
+
+                                Texture newTexture = FindTextureInPaths(pathsToSearch, textureName, extension);
+
+                                if (newTexture != null)
+                                {
+                                    material.SetTexture(propertyName, newTexture);
+                                    Debug.Log($"Updated {propertyName} with new texture {newTexture.name}");
+                                }
+                                else
+                                {
+                                    Debug.LogWarning($"Failed to load new texture for {propertyName} from potential paths for material {material.name}. Detaching texture {textureName}.");
+                                    material.SetTexture(propertyName, null);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+            private void RefillAllMaterials()
         {
             string[] extensions = new string[] { ".png", ".jpg", ".jpeg", ".tga", ".bmp", ".gif", ".psd", ".tif", ".tiff" }; // Supported texture formats
 
